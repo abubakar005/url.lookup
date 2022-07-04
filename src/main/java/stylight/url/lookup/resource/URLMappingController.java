@@ -22,6 +22,6 @@ public class URLMappingController {
     @PostMapping
     public ResponseEntity<String> addNewURLsMapping(@RequestParam("url1") String url1, @RequestParam("url2") String url2) {
         urlMappingService.addNewMapping(url1, url2);
-        return ResponseEntity.ok("URLs Successfully added");
+        return new ResponseEntity<>("URLs Successfully added", HttpStatus.CREATED);
     }
 }
